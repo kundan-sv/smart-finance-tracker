@@ -21,6 +21,13 @@ export const CATEGORIES = [
 
 export const SUSPICIOUS_THRESHOLD = 5000;
 
+export function formatINR(value: number): string {
+  return value.toLocaleString("en-IN", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+}
+
 const STORAGE_KEY = "finance-tracker-transactions";
 
 export function loadTransactions(): Transaction[] {
