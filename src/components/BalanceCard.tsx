@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { formatINR } from "@/lib/finance";
 import { TrendingUp, TrendingDown, Wallet } from "lucide-react";
 
 interface Props {
@@ -19,7 +20,7 @@ export function BalanceCard({ balance, totalIncome, totalExpenses }: Props) {
             <div>
               <p className="text-sm text-muted-foreground">Balance</p>
               <p className={`text-2xl font-bold ${balance >= 0 ? "text-income" : "text-expense"}`}>
-                ₹{Math.abs(balance).toFixed(2)}
+                ₹{formatINR(Math.abs(balance))}
               </p>
             </div>
           </div>
@@ -34,7 +35,7 @@ export function BalanceCard({ balance, totalIncome, totalExpenses }: Props) {
             </div>
             <div>
               <p className="text-sm text-muted-foreground">Income</p>
-              <p className="text-2xl font-bold text-income">₹{totalIncome.toFixed(2)}</p>
+              <p className="text-2xl font-bold text-income">₹{formatINR(totalIncome)}</p>
             </div>
           </div>
         </CardContent>
@@ -48,7 +49,7 @@ export function BalanceCard({ balance, totalIncome, totalExpenses }: Props) {
             </div>
             <div>
               <p className="text-sm text-muted-foreground">Expenses</p>
-              <p className="text-2xl font-bold text-expense">₹{totalExpenses.toFixed(2)}</p>
+              <p className="text-2xl font-bold text-expense">₹{formatINR(totalExpenses)}</p>
             </div>
           </div>
         </CardContent>

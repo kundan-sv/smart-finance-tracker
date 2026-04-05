@@ -1,4 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { formatINR } from "@/lib/finance";
 import {
   PieChart,
   Pie,
@@ -66,7 +67,7 @@ export function SpendingChart({ data }: Props) {
                   <Cell key={i} fill={COLORS[i % COLORS.length]} />
                 ))}
               </Pie>
-              <Tooltip formatter={(value: number) => `₹${value.toFixed(2)}`} />
+              <Tooltip formatter={(value: number) => `₹${formatINR(value)}`} />
             </PieChart>
           </ResponsiveContainer>
           <div className="flex flex-wrap gap-2 mt-2 justify-center">
@@ -93,7 +94,7 @@ export function SpendingChart({ data }: Props) {
               <CartesianGrid strokeDasharray="3 3" className="opacity-30" />
               <XAxis dataKey="category" tick={{ fontSize: 11 }} />
               <YAxis tick={{ fontSize: 11 }} />
-              <Tooltip formatter={(value: number) => `₹${value.toFixed(2)}`} />
+              <Tooltip formatter={(value: number) => `₹${formatINR(value)}`} />
               <Bar dataKey="amount" radius={[6, 6, 0, 0]}>
                 {data.map((_, i) => (
                   <Cell key={i} fill={COLORS[i % COLORS.length]} />

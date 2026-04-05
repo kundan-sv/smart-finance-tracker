@@ -1,4 +1,4 @@
-import { Transaction, SUSPICIOUS_THRESHOLD } from "@/lib/finance";
+import { Transaction, SUSPICIOUS_THRESHOLD, formatINR } from "@/lib/finance";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -73,7 +73,7 @@ export function TransactionList({
                       }`}
                     >
                       {t.amount > 0 ? "+" : ""}
-                      ₹{Math.abs(t.amount).toFixed(2)}
+                      ₹{formatINR(Math.abs(t.amount))}
                     </span>
                     <Button
                       variant="ghost"
