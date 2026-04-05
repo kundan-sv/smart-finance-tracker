@@ -19,7 +19,7 @@ export function BalanceCard({ balance, totalIncome, totalExpenses }: Props) {
             <div>
               <p className="text-sm text-muted-foreground">Balance</p>
               <p className={`text-2xl font-bold ${balance >= 0 ? "text-income" : "text-expense"}`}>
-                ${Math.abs(balance).toFixed(2)}
+                ₹{Math.abs(balance).toFixed(2)}
               </p>
             </div>
           </div>
