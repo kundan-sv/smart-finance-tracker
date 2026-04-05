@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { formatINR } from "@/lib/finance";
 import { TrendingUp, TrendingDown, Wallet } from "lucide-react";
 
 interface Props {
