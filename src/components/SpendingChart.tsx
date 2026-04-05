@@ -93,7 +93,7 @@ export function SpendingChart({ data }: Props) {
               <CartesianGrid strokeDasharray="3 3" className="opacity-30" />
               <XAxis dataKey="category" tick={{ fontSize: 11 }} />
               <YAxis tick={{ fontSize: 11 }} />
-              <Tooltip formatter={(value: number) => `$${value.toFixed(2)}`} />
+              <Tooltip formatter={(value: number) => `₹${value.toFixed(2)}`} />
               <Bar dataKey="amount" radius={[6, 6, 0, 0]}>
                 {data.map((_, i) => (
                   <Cell key={i} fill={COLORS[i % COLORS.length]} />

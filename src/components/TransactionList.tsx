@@ -73,7 +73,7 @@ export function TransactionList({
                       }`}
                     >
                       {t.amount > 0 ? "+" : ""}
-                      ${Math.abs(t.amount).toFixed(2)}
+                      ₹{Math.abs(t.amount).toFixed(2)}
                     </span>
                     <Button
                       variant="ghost"
