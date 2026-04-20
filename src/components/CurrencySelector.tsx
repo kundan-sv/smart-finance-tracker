@@ -12,7 +12,7 @@ export function CurrencySelector() {
 
   return (
     <Select value={currency.code} onValueChange={(v) => setCurrency(v as CurrencyCode)}>
-      <SelectTrigger className="w-[140px] h-9">
+      <SelectTrigger className="w-[140px] h-9 bg-white/10 backdrop-blur border-white/20 text-white hover:bg-white/15 focus:ring-white/30 focus:ring-offset-0 [&>svg]:text-white/70">
         <SelectValue />
       </SelectTrigger>
       <SelectContent>
