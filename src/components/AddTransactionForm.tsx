@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Plus } from "lucide-react";
+import { CurrencySelector } from "@/components/CurrencySelector";
 
 interface Props {
   onAdd: (tx: Omit<Transaction, "id">) => void;
@@ -66,6 +67,11 @@ export function AddTransactionForm({ onAdd }: Props) {
             >
               Expense
             </Button>
+          </div>
+
+          <div className="space-y-2">
+            <Label>Currency</Label>
+            <CurrencySelector />
           </div>
 
           <div className="space-y-2">
