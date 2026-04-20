@@ -22,21 +22,27 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="border-b border-border bg-card">
-        <div className="container max-w-5xl mx-auto px-4 py-5 flex items-start justify-between gap-4">
-          <div>
-            <h1 className="text-2xl font-bold text-foreground tracking-tight">
-              💰 Smart Finance Tracker
-            </h1>
-            <p className="text-sm text-muted-foreground mt-1">
-              Track income, expenses, and get financial insights · Tracks transactions over time
-            </p>
+      <header className="bg-gradient-hero text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.07] pointer-events-none" style={{backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)", backgroundSize: "24px 24px"}} />
+        <div className="container max-w-6xl mx-auto px-6 py-8 flex items-center justify-between gap-4 relative">
+          <div className="flex items-center gap-3">
+            <div className="h-11 w-11 rounded-xl bg-gradient-emerald shadow-glow flex items-center justify-center text-white font-display font-bold text-lg">
+              ₹
+            </div>
+            <div>
+              <h1 className="text-xl sm:text-2xl font-display font-bold tracking-tight">
+                Smart Finance Tracker
+              </h1>
+              <p className="text-xs sm:text-sm text-white/60 mt-0.5">
+                Track income, expenses & insights over time
+              </p>
+            </div>
           </div>
           <CurrencySelector />
         </div>
       </header>
 
-      <main className="container max-w-5xl mx-auto px-4 py-6 space-y-6">
+      <main className="container max-w-6xl mx-auto px-4 sm:px-6 py-8 space-y-6 -mt-4 relative">
         <BalanceCard
           balance={balance}
           totalIncome={totalIncome}
@@ -44,7 +50,7 @@ const Index = () => {
         />
 
         <Tabs defaultValue="add" className="w-full">
-          <TabsList className="w-full grid grid-cols-4">
+          <TabsList className="w-full grid grid-cols-4 bg-muted/60 p-1 h-11">
             <TabsTrigger value="add" className="gap-1.5">
               <PlusCircle className="h-4 w-4" />
               <span className="hidden sm:inline">Add</span>
