@@ -5,7 +5,7 @@ import { TransactionList } from "@/components/TransactionList";
 import { BalanceCard } from "@/components/BalanceCard";
 import { SpendingChart } from "@/components/SpendingChart";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { BarChart3, List, AlertTriangle, PlusCircle } from "lucide-react";
+import { BarChart3, List, AlertTriangle, PlusCircle, Wallet } from "lucide-react";
 import { CurrencySelector } from "@/components/CurrencySelector";
 
 const Index = () => {
@@ -26,8 +26,8 @@ const Index = () => {
         <div className="absolute inset-0 opacity-[0.07] pointer-events-none" style={{backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)", backgroundSize: "24px 24px"}} />
         <div className="container max-w-6xl mx-auto px-6 py-8 flex items-center justify-between gap-4 relative">
           <div className="flex items-center gap-3">
-            <div className="h-11 w-11 rounded-xl bg-gradient-emerald shadow-glow flex items-center justify-center text-white font-display font-bold text-lg">
-              ₹
+            <div className="h-11 w-11 rounded-xl bg-gradient-emerald shadow-glow flex items-center justify-center text-white">
+              <Wallet className="h-5 w-5" />
             </div>
             <div>
               <h1 className="text-xl sm:text-2xl font-display font-bold tracking-tight">
