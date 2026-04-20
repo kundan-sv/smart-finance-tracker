@@ -39,7 +39,7 @@ const Index = () => {
           totalExpenses={totalExpenses}
         />
 
-        <Tabs defaultValue="transactions" className="w-full">
+        <Tabs defaultValue="add" className="w-full">
           <TabsList className="w-full grid grid-cols-4">
             <TabsTrigger value="add" className="gap-1.5">
               <PlusCircle className="h-4 w-4" />
