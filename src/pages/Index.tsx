@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useTransactions } from "@/hooks/useTransactions";
 import { AddTransactionForm } from "@/components/AddTransactionForm";
 import { TransactionList } from "@/components/TransactionList";
@@ -6,7 +5,6 @@ import { BalanceCard } from "@/components/BalanceCard";
 import { SpendingChart } from "@/components/SpendingChart";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { BarChart3, List, AlertTriangle, PlusCircle, Wallet } from "lucide-react";
-import { CurrencySelector } from "@/components/CurrencySelector";
 
 const Index = () => {
   const {
@@ -24,21 +22,18 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <header className="bg-gradient-hero text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.07] pointer-events-none" style={{backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)", backgroundSize: "24px 24px"}} />
-        <div className="container max-w-6xl mx-auto px-6 py-8 flex items-center justify-between gap-4 relative">
-          <div className="flex items-center gap-3">
-            <div className="h-11 w-11 rounded-xl bg-gradient-emerald shadow-glow flex items-center justify-center text-white">
-              <Wallet className="h-5 w-5" />
-            </div>
-            <div>
-              <h1 className="text-xl sm:text-2xl font-display font-bold tracking-tight">
-                Smart Finance Tracker
-              </h1>
-              <p className="text-xs sm:text-sm text-white/60 mt-0.5">
-                Track income, expenses & insights over time
-              </p>
-            </div>
+        <div className="container max-w-6xl mx-auto px-6 py-8 flex items-center gap-3 relative">
+          <div className="h-11 w-11 rounded-xl bg-gradient-emerald shadow-glow flex items-center justify-center text-white">
+            <Wallet className="h-5 w-5" />
           </div>
-          <CurrencySelector />
+          <div>
+            <h1 className="text-xl sm:text-2xl font-display font-bold tracking-tight">
+              Smart Finance Tracker
+            </h1>
+            <p className="text-xs sm:text-sm text-white/60 mt-0.5">
+              Track income, expenses & insights over time
+            </p>
+          </div>
         </div>
       </header>
 
