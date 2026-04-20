@@ -1,4 +1,5 @@
-import { Transaction, SUSPICIOUS_THRESHOLD, formatINR } from "@/lib/finance";
+import { Transaction, SUSPICIOUS_THRESHOLD } from "@/lib/finance";
+import { useCurrency } from "@/lib/currency";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -17,6 +18,7 @@ export function TransactionList({
   title = "Recent Transactions",
   showSuspiciousOnly = false,
 }: Props) {
+  const { format } = useCurrency();
   const list = showSuspiciousOnly
     ? transactions.filter((t) => Math.abs(t.amount) > SUSPICIOUS_THRESHOLD)
     : transactions;
@@ -73,7 +75,7 @@ export function TransactionList({
                       }`}
                     >
                       {t.amount > 0 ? "+" : ""}
-                      ₹{formatINR(Math.abs(t.amount))}
+                      {format(Math.abs(t.amount))}
                     </span>
                     <Button
                       variant="ghost"

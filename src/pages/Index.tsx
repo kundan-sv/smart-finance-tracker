@@ -6,6 +6,7 @@ import { BalanceCard } from "@/components/BalanceCard";
 import { SpendingChart } from "@/components/SpendingChart";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { BarChart3, List, AlertTriangle, PlusCircle } from "lucide-react";
+import { CurrencySelector } from "@/components/CurrencySelector";
 
 const Index = () => {
   const {
@@ -22,13 +23,16 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <header className="border-b border-border bg-card">
-        <div className="container max-w-5xl mx-auto px-4 py-5">
-          <h1 className="text-2xl font-bold text-foreground tracking-tight">
-            💰 Smart Finance Tracker
-          </h1>
-          <p className="text-sm text-muted-foreground mt-1">
-            Track income, expenses, and get financial insights · Tracks transactions over time
-          </p>
+        <div className="container max-w-5xl mx-auto px-4 py-5 flex items-start justify-between gap-4">
+          <div>
+            <h1 className="text-2xl font-bold text-foreground tracking-tight">
+              💰 Smart Finance Tracker
+            </h1>
+            <p className="text-sm text-muted-foreground mt-1">
+              Track income, expenses, and get financial insights · Tracks transactions over time
+            </p>
+          </div>
+          <CurrencySelector />
         </div>
       </header>
 
