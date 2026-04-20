@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { formatINR } from "@/lib/finance";
+import { useCurrency } from "@/lib/currency";
 import { TrendingUp, TrendingDown, Wallet } from "lucide-react";
 
 interface Props {
@@ -9,6 +9,7 @@ interface Props {
 }
 
 export function BalanceCard({ balance, totalIncome, totalExpenses }: Props) {
+  const { format } = useCurrency();
   return (
     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
       <Card className="bg-card">
@@ -20,7 +21,7 @@ export function BalanceCard({ balance, totalIncome, totalExpenses }: Props) {
             <div>
               <p className="text-sm text-muted-foreground">Balance</p>
               <p className={`text-2xl font-bold ${balance >= 0 ? "text-income" : "text-expense"}`}>
-                ₹{formatINR(Math.abs(balance))}
+                {format(Math.abs(balance))}
               </p>
             </div>
           </div>
@@ -35,7 +36,7 @@ export function BalanceCard({ balance, totalIncome, totalExpenses }: Props) {
             </div>
             <div>
               <p className="text-sm text-muted-foreground">Income</p>
-              <p className="text-2xl font-bold text-income">₹{formatINR(totalIncome)}</p>
+              <p className="text-2xl font-bold text-income">{format(totalIncome)}</p>
             </div>
           </div>
         </CardContent>
@@ -49,7 +50,7 @@ export function BalanceCard({ balance, totalIncome, totalExpenses }: Props) {
             </div>
             <div>
               <p className="text-sm text-muted-foreground">Expenses</p>
-              <p className="text-2xl font-bold text-expense">₹{formatINR(totalExpenses)}</p>
+              <p className="text-2xl font-bold text-expense">{format(totalExpenses)}</p>
             </div>
           </div>
         </CardContent>
